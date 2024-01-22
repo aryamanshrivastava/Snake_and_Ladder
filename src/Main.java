@@ -27,7 +27,7 @@ public class Main {
             System.out.println("You rolled a " + diceValue);
 
             // Check if the player is close to 100 and needs a precise roll
-            if (playerPosition >= 94 && playerPosition <= 99) {
+            if (playerPosition >= 94) {
                 int remainingDistance = targetPosition - playerPosition;
                 if (diceValue > remainingDistance) {
                     System.out.println("Roll again.");
