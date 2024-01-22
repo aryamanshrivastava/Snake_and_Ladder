@@ -30,7 +30,7 @@ public class Main {
             if (playerPosition >= 94 && playerPosition <= 99) {
                 int remainingDistance = targetPosition - playerPosition;
                 if (diceValue > remainingDistance) {
-                    System.out.println("You need a precise roll to reach 100. Roll again.");
+                    System.out.println("Roll again.");
                     continue;  // Roll again
                 }
             }
@@ -43,37 +43,32 @@ public class Main {
             playerPosition = checkSnakeAndLadder(playerPosition);
         }
 
-        System.out.println("Congratulations! You reached the target position.");
+        System.out.println("Congratulations! You WON.");
     }
 
     // Checks if the player landed on a Snake or Ladder and updates the position accordingly
     private static int checkSnakeAndLadder(int position) {
-        return switch (position) {
-            case 12 -> {
+        switch (position) {
+            case 12:
                 System.out.println("You landed on a ladder! Move to position 37.");
-                yield 37;
-            }
-            case 21 -> {
+                return 37;
+            case 21:
                 System.out.println("Oops! You landed on a snake. Move back to position 9.");
-                yield 9;
-            }
-            case 28 -> {
+                return 9;
+            case 28:
                 System.out.println("You landed on a ladder! Move to position 84.");
-                yield 84;
-            }
-            case 51 -> {
+                return  84;
+            case 51:
                 System.out.println("Oops! You landed on a snake. Move back to position 7.");
-                yield 7;
-            }
-            case 71 -> {
+                return 7;
+            case 71:
                 System.out.println("You landed on a ladder! Move to position 91.");
-                yield 91;
-            }
-            case 87 -> {
+                return 91;
+            case 87:
                 System.out.println("Oops! You landed on a snake. Move back to position 24.");
-                yield 24;
-            }
-            default -> position;
-        };
+                return 24;
+            default:
+                return position;
+        }
     }
 }
