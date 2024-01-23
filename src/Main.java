@@ -4,6 +4,9 @@ public class Main {
     public static void main(String[] args) {
         int position = 0;
         Player p1 = new Player(position);
-        System.out.println("Starting Position: "+p1.currentPosition);
+        p1.diceValue = (int) (Math.random()*10 % 6)+1;
+        position += p1.diceValue;
+        p1.currentPosition = position;
+        System.out.println("Position of player 1: "+p1.currentPosition);
     }
 }
