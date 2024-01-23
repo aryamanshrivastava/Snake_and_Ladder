@@ -42,7 +42,9 @@ public class Main {
             int index = gameBoard.snakes.indexOf(updatePosition);
             player.currentPosition = gameBoard.snakesBites.get(index);
         } else {
-            player.currentPosition = Math.max(0, Math.min(updatePosition, 100)); // Ensure position doesn't exceed 100
+            if (updatePosition <= 100) {
+                player.currentPosition = updatePosition;
+            } // Ensure position doesn't exceed 100
         }
 
         System.out.println(player);
