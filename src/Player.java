@@ -4,4 +4,12 @@ public class Player {
     Player(int n){
         this.currentPosition = n;
     }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Player{" +
+                "currentPosition=" + currentPosition +
+                ", diceValue=" + diceValue +
+                '}';
+    }
 }
