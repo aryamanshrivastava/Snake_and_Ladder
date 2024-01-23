@@ -20,12 +20,15 @@ public class Main {
 
         System.out.println("Game started!");
         p1.currentPosition = 1;
+        int diceRollCount = 0;
 
         while (p1.currentPosition < 100) {
             m1.playTurn(p1, g);
+            diceRollCount++;
         }
 
         System.out.println("You won!!");
+        System.out.println("Number of times the dice was played to win: " + diceRollCount);
     }
 
     private void playTurn(Player player, GameBoard gameBoard) {
