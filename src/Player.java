@@ -1,15 +1,11 @@
-public class Player {
+class Player {
+    int playerNumber;
     int currentPosition;
     int diceValue;
-    Player(int n){
-        this.currentPosition = n;
-    }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Player{" +
-                "currentPosition=" + currentPosition +
-                ", diceValue=" + diceValue +
-                '}';
+    Player(int playerNumber) {
+        this.playerNumber = playerNumber;
+        this.currentPosition = 0;
+        this.diceValue = 0;
     }
 }
