@@ -14,7 +14,7 @@ public class Main {
 
         // Ensure the game starts only when the player rolls a 6
         while (m1.dieRoll(p1) != 6) {
-            System.out.println("You need to roll a 6 to start the game. Press Enter to roll again...");
+            System.out.println("Roll a 6 to start the game. Press Enter to roll again...");
             sc.nextLine();
         }
 
@@ -42,7 +42,7 @@ public class Main {
             int index = gameBoard.snakes.indexOf(updatePosition);
             player.currentPosition = gameBoard.snakesBites.get(index);
         } else {
-            player.currentPosition = Math.min(updatePosition, 100); // Ensure position doesn't exceed 100
+            player.currentPosition = Math.max(0, Math.min(updatePosition, 100)); // Ensure position doesn't exceed 100
         }
 
         System.out.println(player);
